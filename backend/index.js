@@ -13,11 +13,8 @@ app.get('/' , (req , res)=> {
 })
 
 
-<<<<<<< HEAD
 //route for saving a new book
 
-=======
->>>>>>> fcb16325d6804e56026b471dc2bf8d0189950df3
 
 mongoose
     .connect(mongoDBURL)
