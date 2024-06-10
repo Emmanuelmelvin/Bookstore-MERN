@@ -1,0 +1,4 @@
+What is CORPS Policy.
+Cross-Origin Resource Sharing.
+It is a security mechanism that restricts a web service from requesting a resource to another website
+ 
