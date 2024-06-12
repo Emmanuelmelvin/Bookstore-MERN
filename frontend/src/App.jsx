@@ -1,10 +1,15 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <div className="bg-red-400 text-white" >
-      App
-    </div>
+   <Route>
+    <Route path=''  element={}></Route>
+    <Route path=''  element={}></Route>
+    <Route path=''  element={}></Route>
+    <Route path=''  element={}></Route>
+    <Route path=''  element={}></Route>
+   </Route>
   )
 }
 
