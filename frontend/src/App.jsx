@@ -1,14 +1,21 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
+import ShowBook from './pages/ShowBook.jsx'
+import Home from './pages/Home.jsx'
+import CreateBook from './pages/CreateBook.jsx'
+import DeleteBook from './pages/DeleteBook.jsx'
+import EditBook from './pages/EditBook.jsx'
+
+
 const App = () => {
   return (
    <Route>
-    <Route path=''  element={}></Route>
-    <Route path=''  element={}></Route>
-    <Route path=''  element={}></Route>
-    <Route path=''  element={}></Route>
-    <Route path=''  element={}></Route>
+    <Route path = '/'  element={<Home/>}></Route>
+    <Route path = '/books/create'  element={<CreateBook/>}></Route>
+    <Route path = '/books/details/:id'  element={<ShowBook/>}></Route>
+    <Route path = '/books/edit/:id'  element={<EditBook/>}></Route>
+    <Route path = '/books/delete/:id'  element={<DeleteBook/>}></Route>
    </Route>
   )
 }
