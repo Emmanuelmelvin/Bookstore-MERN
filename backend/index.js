@@ -8,13 +8,14 @@ const app = express();
 //middleware for passing JSON 
 app.use(express.json())
 
+app.use(cors());
 app.use('/books' , bookRoute);
 //Methods of using CORS
 //Oprion1: Allow all origins with defaults of cors()
-app.use(cors());
 
 //Allowing custom origin
 // app.use(cors({
+//         origin: 'http://localhost/3000',
 //         methods: ['GET' , 'POST' , 'DELETE'],
 //         allowedHeaders: ['Content-Type']
 
