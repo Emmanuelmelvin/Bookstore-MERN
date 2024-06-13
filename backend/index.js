@@ -11,14 +11,14 @@ app.use(express.json())
 app.use('/books' , bookRoute);
 //Methods of using CORS
 //Oprion1: Allow all origins with defaults of cors()
-app.use(cors())
+app.use(cors());
 
 //Allowing custom origin
-app.use(cors({
-        methods: ['GET' , 'POST' , 'DELETE'],
-        allowedHeaders: ['Content-Type']
+// app.use(cors({
+//         methods: ['GET' , 'POST' , 'DELETE'],
+//         allowedHeaders: ['Content-Type']
 
-}))
+// }))
 
 
 //Connecting to mongoDB using mongoose
