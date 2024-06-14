@@ -11,8 +11,8 @@ const Home = () => {
 
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(false)
-  useEffect(() => {
 
+  useEffect(() => {
     setLoading(true)
     axios
       .get('http://localhost:5000/books')
@@ -24,7 +24,7 @@ const Home = () => {
         console.log(error)
         setLoading(false)
       })
-  })
+  } , [books])
 
   return (
     <div className='p-4'>
