@@ -10,7 +10,7 @@ const CreateBook = () => {
   const [title , setTitle] = useState('')
   const [author , setAuthor] = useState('')
   const [publishYear , setPublishYear] = useState('')
-  const [error , setError] = useState('')
+  const [error , setError] = useState([false , 'Fill in all entries'])
   const navigate = useNavigate()
 
   const handleSaveBook = (event) => {
@@ -30,7 +30,8 @@ const CreateBook = () => {
     })
     .catch((error) => {
       console.log(error)
-      setError(error.response.data.message)
+      const errorMessage = error.response.data.message
+      setError([true , errorMessage])
     })
   }
 
@@ -73,7 +74,7 @@ const CreateBook = () => {
             />
           </div>
           {
-            error ? (<span className='text-red-300'>{error}</span>) : 'Book created Successfully'
+            error[0] ? (<span className='text-red-300'>{error[1]}</span>) : (<span  className='text-black-300'>{error[1]}</span>)
           }
           <button 
           className='p-2 m-8 bg-sky-300 px-10 py-4 text-xl rounded-xl '
