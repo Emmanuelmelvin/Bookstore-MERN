@@ -30,7 +30,7 @@ const EditBook = () => {
     })
   } , [])
 
-  const handleSaveBook = (event) => {
+  const handleEditBook = (event) => {
     event.preventDefault()
     setLoading(true)
     const bookData = {
@@ -93,7 +93,7 @@ const EditBook = () => {
         }
         <button 
         className='p-2 m-8 bg-sky-300 px-10 py-4 text-xl rounded-xl '
-        onClick={handleSaveBook}
+        onClick={handleEditBook}
         >Edit Book</button>
         </div>
       )
