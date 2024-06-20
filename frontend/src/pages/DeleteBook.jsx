@@ -5,7 +5,6 @@ import Spinner from '../components/Spinner'
 import BackButton from '../components/BackButton'
 
 const DeleteBook = () => {
-
   const [loading, setLoading] = useState(true)
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
@@ -14,7 +13,7 @@ const DeleteBook = () => {
 
   useEffect(() => {
     axios
-      .get(`https://localhost:5000/books/${id}`)
+      .get(`http://localhost:5000/books/${id}`)
       .then(response => {
         setTitle(response.data.title)
         setAuthor(response.data.author)
@@ -28,7 +27,7 @@ const DeleteBook = () => {
   const handelDeleteBook = (event) => {
     event.preventDefault()
     axios
-      .delete(`https://localhost:5000/books/${id}`)
+      .delete(`http://localhost:5000/books/${id}`)
       .then(() => {
         setLoading(false)
         navigate('/')
@@ -43,9 +42,10 @@ const DeleteBook = () => {
   return (
     <div className='p-4'>
       <BackButton />
-      <h1 className='text-3xl my-4'>{`Book ${title} by ${author}`} </h1>
       {
-        loading ? <Spinner /> : ""
+        loading ? <Spinner /> : (
+            <h1 className='text-3xl my-4'>{` ${title} by ${author}`} </h1>
+        )
       }
       <div className='flex flex-col items-center border-sky-400 rounded-xl w-[600px] p-8 mx-auto'>Are you sure you want to delete this book?</div>
       <button
